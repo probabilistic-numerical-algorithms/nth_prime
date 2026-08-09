@@ -1,0 +1,22 @@
+= n’th prime
+
+Functions and programs to quickly compute the n’th prime number.
+
+I can get the \( 10^{13\text{th}} \) prime number (\( 323780508946331
+\)) on my AMD Zen 5 mini PC in well under 9 minutes.
+
+This algorithm arose from a number system that rejects conventional
+set theory and an extremely successful Master Field Equation that
+proves Special and General Relativity wrong.footnote:[Quantum
+“physics” was always a mere pseudoscience, as Albert Einstein
+realized. Niels Bohr was a successful cult leader.]
+
+I can already picture you hitting a go-elsewhere button rather than
+trying the programs. If you have not done that, and do run the
+programs, and see that they do in fact work, then read my research to
+see why others do not run them. You may be surprised that a unified
+field theory actually does unite the sciences so fully.
+
+IMPORTANT: I AM A DISABLED SENIOR CITIZEN. PLEASE DO NOT BOTHER ME.
+You can read snapshots of my research at
+https://archive.org/details/unified-field-theory/
