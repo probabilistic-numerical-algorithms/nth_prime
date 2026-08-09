@@ -2,8 +2,8 @@
 
 Functions and programs to quickly compute the n’th prime number.
 
-I can get the \( 10^{13\text{th}} \) prime number (\( 323780508946331
-\)) on my AMD Zen 5 mini PC in well under 9 minutes.
+I can get the 10¹³th prime number 323780508946331 on my
+AMD Zen 5 mini PC in well under 9 minutes.
 
 This algorithm arose from a number system that rejects conventional
 set theory and an extremely successful Master Field Equation that
