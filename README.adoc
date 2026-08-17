@@ -2,9 +2,6 @@
 
 Functions and programs to quickly compute the n’th prime number.
 
-I can get the 10¹³th prime number 323780508946331 on my
-AMD Zen 5 mini PC in well under 9 minutes.
-
 This algorithm arose from a number system that rejects conventional
 set theory and an extremely successful Master Field Equation that
 proves Special and General Relativity wrong.footnote:[Quantum
@@ -20,3 +17,277 @@ field theory actually does unite the sciences so fully.
 IMPORTANT: I AM A DISABLED SENIOR CITIZEN. PLEASE DO NOT BOTHER ME.
 You can read snapshots of my research at
 https://archive.org/details/unified-field-theory/
+
+***
+
+At the time I am writing this, the world record for n’th prime speed
+is a program called _primecount_. I have updated my algorithm to use
+some of what is used in _primecount_, resulting in a small
+improvement.
+
+Nevertheless, I am not interested in benchmark competitions, and thus
+have not even run _primecount_ on my computer, which is not a computer
+specially made for mathematics. It is a very fast desktop mini-PC with
+24-core AMD Zen 5 CPU. This is a computer of very high performance,
+but when it was purchased there was no clue I would be doing this kind
+of work. It was merely a replacement for my Opterons, for instance to
+compile programs quickly in parallel. There has been only limited
+attempt to tune for hardware efficiency, no profile-guided
+optimization, and no purchase of faster DRAM or external GPU.
+
+For whatever reason, there is a significant slowdown by the time we
+get to the 10¹³th prime number:
+
+++++
+time ./nth-prime-64-c 10
+29
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.001s
+
+time ./nth-prime-64-d 10
+29
+
+real	0m0.007s
+user	0m0.005s
+sys	0m0.002s
+
+time ./nth-prime-64-f 10
+29
+
+real	0m0.007s
+user	0m0.003s
+sys	0m0.004s
+
+time ./nth-prime-64-c 100
+541
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+
+time ./nth-prime-64-d 100
+541
+
+real	0m0.007s
+user	0m0.004s
+sys	0m0.003s
+
+time ./nth-prime-64-f 100
+541
+
+real	0m0.006s
+user	0m0.003s
+sys	0m0.002s
+
+time ./nth-prime-64-c 1000
+7919
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.002s
+
+time ./nth-prime-64-d 1000
+7919
+
+real	0m0.005s
+user	0m0.004s
+sys	0m0.001s
+
+time ./nth-prime-64-f 1000
+7919
+
+real	0m0.007s
+user	0m0.002s
+sys	0m0.005s
+
+time ./nth-prime-64-c 10000
+104729
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.001s
+
+time ./nth-prime-64-d 10000
+104729
+
+real	0m0.007s
+user	0m0.006s
+sys	0m0.001s
+
+time ./nth-prime-64-f 10000
+104729
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.001s
+
+time ./nth-prime-64-c 100000
+1299709
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.001s
+
+time ./nth-prime-64-d 100000
+1299709
+
+real	0m0.007s
+user	0m0.005s
+sys	0m0.002s
+
+time ./nth-prime-64-f 100000
+1299709
+
+real	0m0.010s
+user	0m0.002s
+sys	0m0.005s
+
+time ./nth-prime-64-c 1000000
+15485863
+
+real	0m0.013s
+user	0m0.013s
+sys	0m0.000s
+
+time ./nth-prime-64-d 1000000
+15485863
+
+real	0m0.022s
+user	0m0.023s
+sys	0m0.026s
+
+time ./nth-prime-64-f 1000000
+15485863
+
+real	0m0.026s
+user	0m0.022s
+sys	0m0.004s
+
+time ./nth-prime-64-c 100000000
+2038074743
+
+real	0m0.021s
+user	0m0.013s
+sys	0m0.008s
+
+time ./nth-prime-64-d 100000000
+2038074743
+
+real	0m0.024s
+user	0m0.014s
+sys	0m0.009s
+
+time ./nth-prime-64-f 100000000
+2038074743
+
+real	0m0.026s
+user	0m0.029s
+sys	0m0.006s
+
+time ./nth-prime-64-c 1000000000
+22801763489
+
+real	0m0.066s
+user	0m0.055s
+sys	0m0.009s
+
+time ./nth-prime-64-d 1000000000
+22801763489
+
+real	0m0.120s
+user	0m0.228s
+sys	0m0.975s
+
+time ./nth-prime-64-f 1000000000
+22801763489
+
+real	0m0.084s
+user	0m0.116s
+sys	0m0.021s
+
+time ./nth-prime-64-c 10000000000
+252097800623
+
+real	0m0.613s
+user	0m0.589s
+sys	0m0.020s
+
+time ./nth-prime-64-d 10000000000
+252097800623
+
+real	0m0.565s
+user	0m0.880s
+sys	0m2.348s
+
+time ./nth-prime-64-f 10000000000
+252097800623
+
+real	0m0.646s
+user	0m0.831s
+sys	0m0.021s
+
+time ./nth-prime-64-c 100000000000
+2760727302517
+
+real	0m4.531s
+user	0m4.471s
+sys	0m0.049s
+
+time ./nth-prime-64-d 100000000000
+2760727302517
+
+real	0m4.903s
+user	0m8.377s
+sys	0m20.651s
+
+time ./nth-prime-64-f 100000000000
+2760727302517
+
+real	0m5.734s
+user	0m5.960s
+sys	0m0.071s
+
+time ./nth-prime-64-c 1000000000000
+29996224275833
+
+real	0m35.255s
+user	0m34.952s
+sys	0m0.198s
+
+time ./nth-prime-64-d 1000000000000
+29996224275833
+
+real	0m41.247s
+user	1m30.020s
+sys	4m35.945s
+
+time ./nth-prime-64-f 1000000000000
+29996224275833
+
+real	0m43.708s
+user	0m43.771s
+sys	0m0.225s
+
+time ./nth-prime-64-c 10000000000000
+323780508946331
+
+real	4m59.644s
+user	4m57.914s
+sys	0m0.910s
+
+time ./nth-prime-64-d 10000000000000
+323780508946331
+
+real	6m13.823s
+user	16m39.369s
+sys	59m39.493s
+
+time ./nth-prime-64-f 10000000000000
+323780508946331
+
+real	6m4.795s
+user	6m3.157s
+sys	0m1.191s
+++++
