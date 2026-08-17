@@ -6,7 +6,7 @@ This algorithm arose from a number system that rejects conventional
 set theory and an extremely successful Master Field Equation that
 proves Special and General Relativity wrong.footnote:[Quantum
 “physics” was always a mere pseudoscience, as Albert Einstein
-realized. Niels Bohr was a successful cult leader.]
+realized. Its core postulate is that mathematics is inconsistent.]
 
 I can already picture you hitting a go-elsewhere button rather than
 trying the programs. If you have not done that, and do run the
