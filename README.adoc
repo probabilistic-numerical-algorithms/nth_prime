@@ -6,7 +6,12 @@ This algorithm arose from a number system that rejects conventional
 set theory and an extremely successful Master Field Equation that
 proves Special and General Relativity wrong.footnote:[Quantum
 “physics” was always a mere pseudoscience, as Albert Einstein
-realized. Its core postulate is that mathematics is inconsistent.]
+realized. Its core postulate is that mathematics is inconsistent,
+which is why John Clauser was awarded a Nobel prize for asserting, in
+cloaked form, that zero equals one. Dirac notation is a Newspeak.
+Every other field writes the same mathematics as matrix notation and
+recognizes it as ordinary tensors. Only physics uses a unique
+notation, for no purpose but to inhibit correct cerebral function.]
 
 I can already picture you hitting a go-elsewhere button rather than
 trying the programs. If you have not done that, and do run the
