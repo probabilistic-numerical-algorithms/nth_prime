@@ -38,7 +38,7 @@ optimization, and no purchase of faster DRAM or external GPU.
 For whatever reason, there is a significant slowdown by the time we
 get to the 10¹³th prime number:
 
-++++
+----
 time ./nth-prime-64-c 10
 29
 
@@ -290,4 +290,4 @@ time ./nth-prime-64-f 10000000000000
 real	6m4.795s
 user	6m3.157s
 sys	0m1.191s
-++++
+----
